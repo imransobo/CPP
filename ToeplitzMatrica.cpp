@@ -37,6 +37,9 @@ int main() {
 
     if(jeLiToeplitz(matrica, m, n)) cout << "Matrica je Toeplitz";
     else cout << "Nije Toeplitz.";
+        
+    for(int i=0; i<m; i++) { delete matrica[i]; }
+    delete []matrica;
 
 
 
