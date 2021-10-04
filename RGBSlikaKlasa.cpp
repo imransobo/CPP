@@ -129,7 +129,17 @@ public:
 
 class CrnoBijela: public Slika {
 public:
-    //implementiraj poslije
+    void baciIzuzetak() { throw "Boja moze biti ili crna ili bijela."; }
+    //osiguravamo da ce boja biti ili crna ili bijela, u suprotnom bacamo izuzetak
+    CrnoBijela(int x, int y, int z=255) {
+       if(x==0 && y==0 && z==0 || x==255 && y==255 && z==255) {
+            boja.setX(x);
+            boja.setY(y);
+            boja.setZ(z);
+       }
+       else baciIzuzetak();
+    }
+
     virtual void promijeniBoju(int x, int y, int z) {
         if(x != 0 || x != 255 || y != 0 || y != 255 || z != 0 || z != 255) throw "Neispravna boja";
         this->boja.setX(x);
@@ -140,6 +150,16 @@ public:
 
 class Siva : public Slika {
 public:
+    void baciIzuzetak() { throw "Boja nije siva"; }
+    Siva(int x, int y, int z) {
+        if(x==y==z) {
+            this->boja.setX(x);
+            this->boja.setY(y);
+            this->boja.setZ(z);
+        }
+        else baciIzuzetak();
+    };
+
     virtual void promijeniBoju(int x, int y, int z) {
         if(x != y || x != z || y != z) throw "Neispravna boja";
         this->boja.setX(x);
@@ -149,7 +169,6 @@ public:
     }
 
 };
-
 
 class Lista {
 protected:
