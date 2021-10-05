@@ -8,8 +8,7 @@ template<typename Tip>
 Tip f(Tip **M, int n, int v, int i, int j) {
     int redovi = n / v;
 
-    int sumaLijeve = 0, sumaDesne = 0;
-    int ukupniZbir = 0;
+    
 
     // dijagonala : \
     //novi pristup: nadji indeks, saberi sve ispod tog indeksa jednom petljom
