@@ -149,7 +149,12 @@ public:
         vector<Flasa*> elementi;
     }
 
-    ~Diskont() { elementi.clear(); }
+    ~Diskont() { 
+        while(!elementi.empty()) {
+            delete m.back();
+            elementi.pop_back();
+        }
+    }
 
     //zabrani kopiranje
     Diskont() = delete;
