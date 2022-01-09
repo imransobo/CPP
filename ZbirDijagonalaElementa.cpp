@@ -7,13 +7,7 @@ using namespace std;
 template<typename Tip>
 Tip f(Tip **M, int n, int v, int i, int j) {
     int redovi = n / v;
-
     
-
-    // dijagonala : \
-    //novi pristup: nadji indeks, saberi sve ispod tog indeksa jednom petljom
-    //drugom petljom idi unazad i saberi sve iznad indeksa
-    //radi
     int sumaIspodElementa = 0;
     for(int a=i; a<redovi; a++) {
         for(int b=j; b<v; b++) {
@@ -23,7 +17,7 @@ Tip f(Tip **M, int n, int v, int i, int j) {
     sumaIspodElementa -= M[i][j];
 
 
-    //suma iznad elementa, radi.
+  
     int sumaIznadElementa = 0;
     for(int a=i; a>=0; a--) {
         for(int b=j; b>=0; b--) {
@@ -39,8 +33,6 @@ Tip f(Tip **M, int n, int v, int i, int j) {
 
     //-------------------------------------------------------------------
 
-    //dijagonala : /
-    //racunamo sumu iznad elementa, radi
     int sumaIznadElementa2 = 0;
     for(int a=i; a<redovi; a++) {
         for(int b=j; b<v; b++) {
@@ -50,7 +42,7 @@ Tip f(Tip **M, int n, int v, int i, int j) {
     sumaIznadElementa2 -= M[i][j];
 
 
-    //suma ispod elementa
+  
     int sumaIspodElementa2 = 0;
 
     for(int a=i; a<redovi; a++) {
@@ -82,7 +74,6 @@ int main() {
     cout << endl << "Unesi broj vrsti: ";
     cin >> vrste;
 
-    //broj elemenata matrice, saljemo u funkciju
     int n = redovi*vrste;
 
     int **matrica =  new int*[redovi];
@@ -104,8 +95,6 @@ int main() {
 
 
 
-
-    //dealociraj prostor
     for(int i=0; i<redovi; i++) {
         delete matrica[i];
     }
