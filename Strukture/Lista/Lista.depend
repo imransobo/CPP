@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1641471947 source:c:\users\korisnik\onedrive\desktop\fakultet\strukture c++\vjezbe 6\lista\main.cpp
+	<iostream>
+	"lista.h"
+
+1641471937 c:\users\korisnik\onedrive\desktop\fakultet\strukture c++\vjezbe 6\lista\lista.h
+	<iostream>
+
